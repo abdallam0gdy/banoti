@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day Malak ❤️</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fdf2f8; /* pink-50 */
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="%23ec4899"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'), auto;
+        }
+        
+        /* Custom Animations */
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+        .heart-float {
+            position: absolute;
+            animation: float linear infinite;
+            bottom: -10vh;
+            pointer-events: none;
+            color: #f472b6; /* pink-400 */
+        }
+
+        .wiggle:hover {
+            animation: wiggle 1s ease-in-out infinite;
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        /* Pattern Background */
+        .bg-pattern {
+            background-image: radial-gradient(#ec4899 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 4px solid #fbcfe8; /* pink-200 */
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.2);
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Infinity Animation */
+        @keyframes infinity-pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px #ec4899); }
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 20px #ec4899); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 5px #ec4899); }
+        }
+        .infinity-symbol {
+            font-size: 5rem;
+            background: -webkit-linear-gradient(#ec4899, #f43f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: infinity-pulse 2s infinite;
+        }
+
+        /* Click Burst Effect */
+        .burst {
+            position: absolute;
+            pointer-events: none;
+            animation: fade-up 1s ease-out forwards;
+        }
+        @keyframes fade-up {
+            0% { opacity: 1; transform: translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateY(-50px) scale(1.5); }
+        }
+    </style>
+</head>
+<body onclick="createBurst(event)" class="text-pink-900 min-h-screen relative selection:bg-pink-200 selection:text-pink-900 pb-10">
+
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 bg-pattern pointer-events-none"></div>
+    
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 container mx-auto px-4 py-8 max-w-md flex flex-col items-center gap-6">
+
+        <!-- Header Section -->
+        <div class="glass-card p-6 rounded-[2.5rem] w-full text-center relative mt-4 transform hover:scale-[1.01] transition-transform duration-300">
+            <!-- Bow Decoration -->
+            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-pink-500 drop-shadow-lg animate-bounce">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="#ec4899" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.5 5.5C19 5.5 17.5 6 16.5 7C16 5.5 14.5 4.5 13 4.5C10.5 4.5 9 6.5 9 8.5C9 7 7.5 5.5 6 5.5C3.5 5.5 2 7.5 2 10C2 12.5 4 14.5 6.5 14.5C7.5 14.5 8.5 14 9.5 13C10 14.5 11.5 15.5 13 15.5C15.5 15.5 17 13.5 17 11.5C17 13 18.5 14.5 20 14.5C22.5 14.5 24 12.5 24 10C24 7.5 22 5.5 20.5 5.5ZM13 12C11.9 12 11 11.1 11 10C11 8.9 11.9 8 13 8C14.1 8 15 8.9 15 10C15 11.1 14.1 12 13 12Z"/>
+                </svg>
+            </div>
+
+            <!-- Image Container -->
+            <div class="flex justify-center mb-4 mt-6">
+                <div class="relative bg-white p-4 rounded-full border-4 border-pink-200 shadow-inner w-44 h-44 flex items-center justify-center overflow-hidden group">
+                    <!-- New Hello Kitty Image -->
+                    <img src="https://static.wikia.nocookie.net/sanrio/images/9/9f/Hello_Kitty.jpg/revision/latest/scale-to-width-down/1000?cb=20191128154539" 
+                         alt="Hello Kitty" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 wiggle rounded-full">
+                </div>
+            </div>
+
+            <h1 class="text-3xl font-black text-pink-600 mb-1 drop-shadow-sm tracking-tight">
+                Happy Valentine's
+            </h1>
+            <h2 class="text-4xl font-bold text-pink-500 mt-2 flex items-center justify-center gap-2">
+                يا أحلى مَلَك
+                <span class="text-2xl animate-pulse">👑</span>
+            </h2>
+        </div>
+
+        <!-- Music Section (Embeds) -->
+        <div class="bg-white p-5 rounded-3xl shadow-lg w-full border-2 border-pink-200">
+            <h3 class="text-center font-bold text-pink-600 mb-4 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                أغاني ليكي يا روحي
+            </h3>
+            
+            <div class="space-y-4">
+                <!-- Video 1: Ya Ajmal Oyoun -->
+                <div class="bg-pink-50 rounded-2xl p-2 border border-pink-100">
+                    <p class="text-xs font-bold text-pink-500 mb-2 mr-1">🎵 يا أجمل عيون (عيون ملوكة)</p>
+                    <div class="aspect-video rounded-xl overflow-hidden shadow-sm border-2 border-pink-200">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/HcodxmdesfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2: Ana Mesh Ma'ahom -->
+                <div class="bg-pink-50 rounded-2xl p-2 border border-pink-100">
+                    <p class="text-xs font-bold text-pink-500 mb-2 mr-1">🎵 أنا مش معاهم أنا معاكي يا بنوتي</p>
+                    <div class="aspect-video rounded-xl overflow-hidden shadow-sm border-2 border-pink-200">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/6B9utZOePLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Juice Section -->
+        <div class="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-[2rem] shadow-lg w-full border-2 border-red-200 relative overflow-hidden group">
+            <div class="absolute -right-4 -top-4 text-red-100 opacity-20 transform rotate-12">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor"><path d="M20 10c0-4.418-3.582-8-8-8s-8 3.582-8 8c0 3.086 1.748 5.762 4.305 7.105l-.94 1.88c-.24.48.11 1.015.635 1.015h8c.525 0 .875-.535.635-1.015l-.94-1.88C18.252 15.762 20 13.086 20 10z"/></svg>
+            </div>
+            
+            <div class="flex items-center justify-between mb-3 relative z-10">
+                <h3 class="text-xl font-bold text-red-500 flex items-center gap-2">
+                    🍎 ركن عصير التفاح
+                </h3>
+                <span class="bg-white px-3 py-1 rounded-full text-xs font-bold text-red-400 border border-red-100">
+                    لملك فقط
+                </span>
+            </div>
+
+            <p class="text-pink-800 mb-4 text-sm font-semibold relative z-10">
+                مخزون السعادة والاستراتيجية بتاعك جاهز!
+            </p>
+            
+            <button id="juice-btn" onclick="drinkJuice()" class="w-full relative z-10 bg-white hover:bg-red-50 text-red-500 font-bold py-3 px-4 rounded-xl shadow border-b-4 border-red-200 active:border-b-0 active:mt-1 transition-all flex justify-center items-center gap-2">
+                🧃 إشربي عصير (<span id="juice-count">0</span>)
+            </button>
+            <div id="juice-msg" class="text-center text-red-400 text-sm font-bold mt-2 h-6"></div>
+        </div>
+
+        <!-- Improved Love Meter -->
+        <div class="w-full bg-white p-6 rounded-[2rem] shadow-md border-2 border-pink-100 relative overflow-hidden">
+            <h3 class="text-center font-bold text-pink-500 mb-4 text-lg">مقياس حبي ليكي</h3>
+            
+            <!-- Progress Bar -->
+            <div class="w-full bg-pink-100 rounded-full h-8 overflow-hidden relative border border-pink-200">
+                <div id="love-bar" class="bg-gradient-to-r from-pink-400 via-pink-500 to-red-500 h-full rounded-full transition-all duration-300 flex items-center justify-end px-3 text-white text-xs font-bold shadow-[0_0_15px_rgba(236,72,153,0.5)]" style="width: 5%;">
+                    5%
+                </div>
+            </div>
+
+            <!-- Boost Button -->
+            <button onclick="boostLove()" class="mt-4 w-full bg-pink-50 hover:bg-pink-100 text-pink-500 font-bold py-2 rounded-xl border border-pink-200 transition-colors active:scale-95 flex justify-center items-center gap-2">
+                <svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                زودي الحب ❤️
+            </button>
+
+            <!-- Infinity Button -->
+            <button onclick="showInfinity()" class="mt-3 w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg transform transition active:scale-95 border-b-4 border-purple-800 flex items-center justify-center gap-2">
+                <span class="text-lg">✨</span>
+                ياترى أنا بحبك قد إيه؟
+                <span class="text-lg">✨</span>
+            </button>
+
+            <!-- Infinity Overlay (Hidden by default) -->
+            <div id="infinity-overlay" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm z-20 flex flex-col items-center justify-center p-4 animate-fade-in text-center">
+                <div class="infinity-symbol">∞</div>
+                <p class="text-pink-600 font-bold text-xl mt-2">مالوش نهاية!</p>
+                <p class="text-gray-500 text-sm mt-1">حبي ليكي أكبر من أي رقم</p>
+                <button onclick="hideInfinity()" class="mt-4 text-xs text-pink-400 underline">رجوع</button>
+            </div>
+        </div>
+
+        <!-- Surprise Message Button -->
+        <div class="w-full">
+            <button id="gift-btn" onclick="toggleMessage()" class="w-full bg-gradient-to-r from-pink-400 to-pink-600 hover:from-pink-500 hover:to-pink-700 text-white text-xl font-bold py-5 px-6 rounded-3xl shadow-xl transform transition hover:-translate-y-1 border-b-8 border-pink-800 flex items-center justify-center gap-3">
+                <span class="animate-bounce">🎁</span>
+                دوسي هنا عشان هديتك
+            </button>
+
+            <!-- Hidden Message Card -->
+            <div id="message-card" class="hidden mt-6 bg-white p-8 rounded-[2rem] shadow-2xl border-4 border-pink-300 text-center relative overflow-hidden animate-fade-in">
+                <!-- Decorations -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-pink-500 to-pink-300"></div>
+                <div class="absolute top-4 right-4 text-yellow-400 text-2xl animate-spin">✨</div>
+
+                <h3 class="text-3xl font-black text-pink-600 mb-4">
+                    إلى حبيبتي ملك ❤️
+                </h3>
+                
+                <div class="text-gray-600 leading-loose text-lg mb-6 font-medium space-y-2">
+                    <p>النهاردة الفلانتين، بس الحقيقة إن كل يوم معاكي هو عيد ليا.</p>
+                    <p>ربنا يخليكي ليا وتفضلي منورة حياتي بضحكتك اللي بتمحي أي زعل.</p>
+                    <p class="text-pink-600 font-bold mt-4 block border-t-2 border-pink-100 pt-4">
+                        بحبك قد الدنيا، وقد كل علب عصير التفاح اللي في السوبر ماركت! 😂🍎
+                    </p>
+                </div>
+
+                <div class="flex justify-center gap-4 my-6">
+                    <span class="text-3xl animate-pulse">❤️</span>
+                    <span class="text-4xl animate-bounce">🍎</span>
+                    <span class="text-3xl animate-pulse">❤️</span>
+                </div>
+
+                <button onclick="toggleMessage()" class="text-pink-400 text-sm hover:text-pink-600 font-bold underline">
+                    اقفلي الرسالة
+                </button>
+            </div>
+        </div>
+
+        <footer class="text-pink-400 text-xs mt-8 pb-4 font-bold text-center opacity-80" dir="ltr">
+            Made with ❤️ for Malak abdalla's daughter only
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Floating Hearts Logic
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartSVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+            
+            for(let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = heartSVG;
+                heart.className = 'heart-float';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.width = (Math.random() * 30 + 10) + 'px';
+                heart.style.height = heart.style.width;
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                heart.style.opacity = Math.random() * 0.5 + 0.1;
+                container.appendChild(heart);
+            }
+        }
+        createHearts();
+
+        // 2. Click Burst Effect
+        function createBurst(e) {
+            // Don't trigger on buttons to avoid clutter
+            if(e.target.tagName === 'BUTTON') return;
+
+            const burst = document.createElement('div');
+            burst.className = 'burst text-pink-500 font-bold text-xl';
+            burst.innerHTML = '❤️';
+            burst.style.left = e.pageX + 'px';
+            burst.style.top = e.pageY + 'px';
+            document.body.appendChild(burst);
+            
+            setTimeout(() => burst.remove(), 1000);
+        }
+
+        // 3. Apple Juice Logic
+        let juiceCount = 0;
+        function drinkJuice() {
+            juiceCount++;
+            document.getElementById('juice-count').innerText = juiceCount;
+            const btn = document.getElementById('juice-btn');
+            const msg = document.getElementById('juice-msg');
+            
+            // Animation reset
+            btn.classList.remove('scale-95');
+            void btn.offsetWidth; // trigger reflow
+            btn.classList.add('scale-95');
+            setTimeout(() => btn.classList.remove('scale-95'), 100);
+
+            // Messages
+            const messages = ["بالهنا والشفا! ❤️", "كمان واحدة؟ 🍎", "صحة وعافية 🥰", "اديلووو عصير! 🧃"];
+            msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Confetti effect inside button (simple)
+            if(juiceCount % 10 === 0) {
+                alert("يا سيدي يا سيدي على العصير! 🎉\nانتي شربتي " + juiceCount + " علبة!");
+            }
+        }
+
+        // 4. Message Toggle
+        function toggleMessage() {
+            const card = document.getElementById('message-card');
+            const btn = document.getElementById('gift-btn');
+            
+            if (card.classList.contains('hidden')) {
+                card.classList.remove('hidden');
+                btn.classList.add('hidden');
+            } else {
+                card.classList.add('hidden');
+                btn.classList.remove('hidden');
+            }
+        }
+
+        // 5. Love Meter Logic
+        let lovePercentage = 5;
+        function boostLove() {
+            const bar = document.getElementById('love-bar');
+            
+            lovePercentage += Math.floor(Math.random() * 15) + 5;
+            
+            // Allow it to overflow visually for fun
+            if (lovePercentage > 100) {
+                bar.style.width = '100%';
+                bar.innerText = lovePercentage + '%';
+                bar.classList.add('animate-pulse');
+            } else {
+                bar.style.width = lovePercentage + '%';
+                bar.innerText = lovePercentage + '%';
+            }
+
+            // Create hearts near the button
+            const btn = event.currentTarget;
+            const rect = btn.getBoundingClientRect();
+        }
+
+        function showInfinity() {
+            document.getElementById('infinity-overlay').classList.remove('hidden');
+            // Boost the bar to infinity visually
+            const bar = document.getElementById('love-bar');
+            bar.style.width = '100%';
+            bar.innerText = '∞';
+        }
+
+        function hideInfinity() {
+            document.getElementById('infinity-overlay').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
